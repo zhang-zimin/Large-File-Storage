@@ -10,5 +10,14 @@
 ---
 
 ## 说明
-- 你可以根据需要添加任意类型的大文件（如图片、视频、二进制文件等）进行 LFS 测试。
-- 建议在 `.gitattributes` 文件中指定需要 LFS 管理的文件类型。
+- **跳过大文件下载**：如果你只想先克隆仓库但不下载大文件，可以使用如下命令（PowerShell 示例）：
+  
+  ```powershell
+  $Env:GIT_LFS_SKIP_SMUDGE = 1; git clone https://github.com/zhang-zimin/Large-File-Storage.git
+  ```
+
+- **后续下载大文件**：克隆完成后，如需下载 LFS 管理的大文件，进入仓库目录后执行：
+
+  ```sh
+  git lfs pull
+  ```
